@@ -1,0 +1,10 @@
+<form [formGroup]="fGroup">
+	<label class="text-top">Nombre del usuario</label>
+	<input formControlName="name" class="input-form" placeholder="Agrega un text">
+	<ng-container formArrayName="controles">
+		<div *ngFor="let _ of controles.controls; index as i">
+			<input [formControlName]="i" type="text" class="input-form" placeholder="nuevo input">
+</div>
+			<button (click)="agregarControl()">Agregar +</button>
+	</ng-container>
+</form>
